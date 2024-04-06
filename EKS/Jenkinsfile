@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout SCM'){
             steps{
                 script{
-                    git branch: 'main', url: "https://github.com/Sacbank/Terraform-EKS-TF.git"
+                    git branch: 'master', url: "https://github.com/Sacbank/Terraform-EKS-TF.git"
                 }
             }
         }
