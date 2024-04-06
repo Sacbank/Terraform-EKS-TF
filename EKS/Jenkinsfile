@@ -44,7 +44,8 @@ pipeline {
             steps{
                 script{
                     dir('EKS'){
-                         sh 'terraform plan'
+                        sh 'terraform plan -out tfplan'
+                        sh 'terraform show -no-color tfplan > tfplan.txt'
                     }
                     input(message: "Are you sure to proceed?", ok: "proceed")
                 }
